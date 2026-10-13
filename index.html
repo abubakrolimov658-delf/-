@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Абубакр Олимов | Графический & UX/UI Дизайнер | 3D Portfolio</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Портфолиои расмии Абубакр Олимов - Графический дизайнер ва UX/UI дизайнер. Постерҳои 3D, брендинг, визиткаҳо, рекламаи тиҷоратӣ ва тарроҳии замонавӣ." />
+  <meta name="keywords" content="Абубакр Олимов, Abubakr Olimov, Графический дизайнер, UX UI дизайнер, Постерҳо, Реклама, Брендинг, Душанбе, Тоҷикистон, Photoshop, Figma, 3D Design" />
+  <meta name="author" content="Abubakr Olimov" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Абубакр Олимов | Графический & UX/UI Дизайнер" />
+  <meta property="og:description" content="Портфолиои премиуми 3D, постерҳои рекламавӣ, карточкаҳои мол ва UX/UI дизайн." />
+  <meta property="og:image" content="./abubakr_profile.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Background 3D Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- ==========================================
+       HEADER & NAVIGATION
+       ========================================== -->
+  <header class="header">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-logo" id="brand-logo-link">
+        <div class="logo-badge">AO</div>
+        <div class="logo-text">
+          <span class="logo-name">Abubakr Olimov</span>
+          <span class="logo-sub">Creative Studio</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li class="nav-item"><a href="#home" class="active" data-i18n="nav_home">Асосӣ</a></li>
+          <li class="nav-item"><a href="#about" data-i18n="nav_about">Дар бораи ман</a></li>
+          <li class="nav-item"><a href="#skills" data-i18n="nav_skills">Маҳоратҳо</a></li>
+          <li class="nav-item"><a href="#portfolio" data-i18n="nav_portfolio">Портфолио</a></li>
+          <li class="nav-item"><a href="#services" data-i18n="nav_services">Хизматрасониҳо</a></li>
+          <li class="nav-item"><a href="#pricing" data-i18n="nav_pricing">Нархнома</a></li>
+          <li class="nav-item"><a href="#contact" data-i18n="nav_contact">Тамос</a></li>
+        </ul>
+      </nav>
+
+      <!-- Language & Theme Controls -->
+      <div class="nav-controls">
+        <!-- 3-Language Switcher -->
+        <div class="lang-switcher" id="lang-switcher">
+          <button class="lang-btn active" data-lang="tj" title="Тоҷикӣ">TJ</button>
+          <button class="lang-btn" data-lang="ru" title="Русский">RU</button>
+          <button class="lang-btn" data-lang="en" title="English">EN</button>
+        </div>
+
+        <!-- Theme Toggle (Dark / Light) -->
+        <button class="theme-toggle-btn" id="theme-toggle-btn" title="Ивази мавзӯъ / Смена темы">
+          <i class="fas fa-sun" id="theme-icon"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Кушодани меню">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Backdrop -->
+  <div class="nav-backdrop" id="nav-backdrop"></div>
+
+  <main>
+    <!-- ==========================================
+         HERO SECTION (3D SHOWCASE)
+         ========================================== -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <!-- Hero Text Content -->
+        <div class="hero-content">
+          <div class="badge badge-pulse" data-i18n="hero_badge">Барои лоиҳаҳо озод</div>
+
+          <h1 class="hero-title">
+            <span data-i18n="hero_hello">Салом, ман</span><br />
+            <span class="text-gradient" data-i18n="hero_name">Абубакр Олимов</span>
+          </h1>
+
+          <div class="hero-subtitle-wrapper">
+            <i class="fas fa-terminal" style="color: var(--accent-amber); font-size: 1.1rem;"></i>
+            <span id="typing-text">UX/UI Дизайнери Замонавӣ</span>
+            <span class="typing-cursor">|</span>
+          </div>
+
+          <p class="hero-description" data-i18n="hero_desc">
+            Ман тарҳҳои визуалӣ, постерҳои ҷолиб, маҳсулоти э-коммерс ва интерфейсҳои замонавии веб ва мобилиро бо сабки премиум ва 3D эҷод мекунам. Ҳар як лоиҳа бо завқи баланд ва сифати беҳтарин иҷро мешавад.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn btn-primary" id="hero-btn-portfolio">
+              <i class="fas fa-layer-group"></i>
+              <span data-i18n="hero_btn_works">Дидани корҳо</span>
+            </a>
+            <a href="https://wa.me/992936010601" target="_blank" class="btn btn-whatsapp" id="hero-btn-wa">
+              <i class="fab fa-whatsapp"></i>
+              <span>WhatsApp (+992 936-01-06-01)</span>
+            </a>
+            <a href="#contact" class="btn btn-secondary" id="hero-btn-contact-anchor">
+              <i class="fas fa-paper-plane"></i>
+              <span data-i18n="hero_btn_contact">Тамос бо ман</span>
+            </a>
+          </div>
+
+          <!-- Live Stats Row -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">70+</span>
+              <span class="stat-label" data-i18n="hero_stat_projects">Лоиҳаҳои тайёр</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">3+</span>
+              <span class="stat-label" data-i18n="hero_stat_exp">Сол таҷриба</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label" data-i18n="hero_stat_clients">Мизоҷони розӣ</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label" data-i18n="hero_stat_quality">Сифати кор</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Interactive Card / Profile Visual -->
+        <div class="hero-visual">
+          <div class="hero-3d-card" id="hero-card">
+            <div class="card-ambient-glow"></div>
+
+            <!-- Floating 3D Tool Badges -->
+            <div class="floating-badge badge-ps">
+              <i class="fab fa-adobe"></i>
+              <span>Photoshop Pro</span>
+            </div>
+            <div class="floating-badge badge-figma">
+              <i class="fab fa-figma"></i>
+              <span>Figma UX/UI</span>
+            </div>
+            <div class="floating-badge badge-3d">
+              <i class="fas fa-cube"></i>
+              <span>3D Mockups</span>
+            </div>
+            <div class="floating-badge badge-ui">
+              <i class="fas fa-wand-magic-sparkles"></i>
+              <span>Visual Arts</span>
+            </div>
+
+            <!-- Profile Avatar Photo Container -->
+            <div class="profile-avatar-container">
+              <img src="./abubakr_profile.png" alt="Абубакр Олимов" class="profile-avatar-img" />
+            </div>
+
+            <div class="card-user-info">
+              <h3 class="card-user-name">Абубакр Олимов</h3>
+              <p class="card-user-role">Graphic & UX/UI Designer</p>
+              <div style="margin-top: 0.6rem; display: flex; gap: 0.5rem; justify-content: center;">
+                <span class="tool-tag" style="color: var(--accent-amber); border-color: rgba(245, 158, 11, 0.4);">+992 936-01-06-01</span>
+                <span class="tool-tag">Tajikistan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         ABOUT ME SECTION
+         ========================================== -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Card Visual Showcase -->
+          <div class="about-visual-col">
+            <div class="about-banner-card">
+              <img src="./1122.png" alt="Olimov Abubakr Business Card" />
+              <div class="about-card-badge">
+                <div>
+                  <h4 style="font-size: 1rem; color: #fff;">Olimov Abubakr</h4>
+                  <p style="font-size: 0.8rem; color: var(--accent-amber);">Graphic Designer & Identity</p>
+                </div>
+                <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">
+                  <i class="fas fa-phone-volume"></i>
+                  <span>Тамос</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Text Details & Workflow -->
+          <div class="about-info-text">
+            <div class="badge" data-i18n="about_badge">Дар бораи дизайнер</div>
+            <h2 class="section-title" data-i18n="about_title">Ҳадафи ман — офаридани тарҳе, ки диққатро ҷалб мекунад</h2>
+
+            <p class="about-lead" data-i18n="about_lead">
+              Салом! Номи ман Абубакр Олимов. Ман графический ва UX/UI дизайнери касбӣ ҳастам.
+            </p>
+
+            <div class="about-paragraphs">
+              <p data-i18n="about_p1">
+                Ман дар соҳаи тарроҳии визуалӣ кор мекунам ва барои брендҳо, тиҷоратҳо ва ширкатҳо постерҳои рекламавии замонавӣ, визиткаҳо, баннерҳои шабакаҳои иҷтимоӣ, баннерҳои чопӣ ва интерфейсҳои истифодабаранда (UX/UI) месозам.
+              </p>
+              <p data-i18n="about_p2">
+                Асоси кори ман — дақиқӣ, зебоӣ ва мутобиқат бо стандартҳои ҷаҳонии тарроҳии муосир мебошад. Бо истифода аз абзорҳои пешрафтаи Photoshop ва Figma ман ғояҳои шуморо ба воқеияти визуалӣ табдил медиҳам.
+              </p>
+            </div>
+
+            <!-- Workflow 4 Steps -->
+            <div class="workflow-grid">
+              <div class="workflow-step">
+                <span class="workflow-num">01</span>
+                <h4 class="workflow-title" data-i18n="about_step1">1. Таҳлил ва мулоқот</h4>
+                <p class="workflow-desc" data-i18n="about_step1_desc">Муайян кардани ҳадаф ва аудитория</p>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-num">02</span>
+                <h4 class="workflow-title" data-i18n="about_step2">2. Консепт ва ғоя</h4>
+                <p class="workflow-desc" data-i18n="about_step2_desc">Офаридани эскиз ва сохтори визуалӣ</p>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-num">03</span>
+                <h4 class="workflow-title" data-i18n="about_step3">3. Дизайни 3D ва Premium</h4>
+                <p class="workflow-desc" data-i18n="about_step3_desc">Тарроҳии ниҳоӣ бо ҷузъиёти баланд</p>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-num">04</span>
+                <h4 class="workflow-title" data-i18n="about_step4">4. Таҳвили лоиҳа</h4>
+                <p class="workflow-desc" data-i18n="about_step4_desc">Омодасозӣ барои чоп ва веб</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SKILLS & EXPERTISE SECTION
+         ========================================== -->
+    <section class="skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge" data-i18n="skills_badge">Маҳоратҳо ва Абзорҳо</div>
+          <h2 class="section-title" data-i18n="skills_title">Технологияҳо ва таҷрибаи кории ман</h2>
+          <p class="section-subtitle" data-i18n="skills_subtitle">Абзорҳо ва маҳоратҳое, ки ман дар эҷоди тарҳҳои беҳтарин истифода мебарам</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Skill 1: Photoshop -->
+          <div class="skill-card">
+            <div class="skill-icon-wrapper">
+              <i class="fab fa-adobe"></i>
+            </div>
+            <h3 class="skill-title" data-i18n="skill_ps">Adobe Photoshop & Манипулятсия</h3>
+            <p class="skill-desc" data-i18n="skill_ps_desc">Ретуши аксҳо, сохтани сояҳо, коллажҳо, ивази рӯй ва постерҳои тиҷоратӣ.</p>
+            <div class="skill-progress-bar">
+              <div class="skill-progress-fill" style="width: 98%;"></div>
+            </div>
+          </div>
+
+          <!-- Skill 2: Figma / UX UI -->
+          <div class="skill-card">
+            <div class="skill-icon-wrapper" style="color: #06b6d4; border-color: rgba(6, 182, 212, 0.3); background: rgba(6, 182, 212, 0.1);">
+              <i class="fab fa-figma"></i>
+            </div>
+            <h3 class="skill-title" data-i18n="skill_ui">Figma & UX/UI Дизайн</h3>
+            <p class="skill-desc" data-i18n="skill_ui_desc">Сохтани сохтори сайтҳо, барномаҳои мобилӣ ва таҷрибаи роҳати корбар.</p>
+            <div class="skill-progress-bar">
+              <div class="skill-progress-fill" style="width: 93%;"></div>
+            </div>
+          </div>
+
+          <!-- Skill 3: Branding -->
+          <div class="skill-card">
+            <div class="skill-icon-wrapper" style="color: #ec4899; border-color: rgba(236, 72, 153, 0.3); background: rgba(236, 72, 153, 0.1);">
+              <i class="fas fa-crown"></i>
+            </div>
+            <h3 class="skill-title" data-i18n="skill_brand">Брендинг ва Ҳувияти Визуалӣ</h3>
+            <p class="skill-desc" data-i18n="skill_brand_desc">Визиткаҳо, логотипҳо, рангҳо ва қоидаҳои брендинг барои ширкатҳо.</p>
+            <div class="skill-progress-bar">
+              <div class="skill-progress-fill" style="width: 95%;"></div>
+            </div>
+          </div>
+
+          <!-- Skill 4: E-Commerce -->
+          <div class="skill-card">
+            <div class="skill-icon-wrapper" style="color: #10b981; border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">
+              <i class="fas fa-bag-shopping"></i>
+            </div>
+            <h3 class="skill-title" data-i18n="skill_market">Э-коммерс ва Карточкаҳои Мол</h3>
+            <p class="skill-desc" data-i18n="skill_market_desc">Тарҳи карточкаҳо барои мағозаҳо, инфографика ва баннерҳои ҷолиб.</p>
+            <div class="skill-progress-bar">
+              <div class="skill-progress-fill" style="width: 96%;"></div>
+            </div>
+          </div>
+
+          <!-- Skill 5: Print -->
+          <div class="skill-card">
+            <div class="skill-icon-wrapper" style="color: #6366f1; border-color: rgba(99, 102, 241, 0.3); background: rgba(99, 102, 241, 0.1);">
+              <i class="fas fa-print"></i>
+            </div>
+            <h3 class="skill-title" data-i18n="skill_print">Полиграфия ва Чоп</h3>
+            <p class="skill-desc" data-i18n="skill_print_desc">Брошюраҳо, флаерҳо, буклетҳо, винеткаҳо ва баннерҳои кӯчагӣ.</p>
+            <div class="skill-progress-bar">
+              <div class="skill-progress-fill" style="width: 92%;"></div>
+            </div>
+          </div>
+
+          <!-- Skill 6: 3D Mockups -->
+          <div class="skill-card">
+            <div class="skill-icon-wrapper">
+              <i class="fas fa-cube"></i>
+            </div>
+            <h3 class="skill-title" data-i18n="skill_3d">3D Эффектҳо ва Мокапҳо</h3>
+            <p class="skill-desc" data-i18n="skill_3d_desc">Пешниҳоди воқеии маҳсулот дар фазои 3D барои ҷалби максималии харидор.</p>
+            <div class="skill-progress-bar">
+              <div class="skill-progress-fill" style="width: 94%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PORTFOLIO GALLERY SECTION
+         ========================================== -->
+    <section class="portfolio-section" id="portfolio">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge" data-i18n="portfolio_badge">Галереяи Корҳо</div>
+          <h2 class="section-title" data-i18n="portfolio_title">Намунаи корҳо ва лоиҳаҳои ман</h2>
+          <p class="section-subtitle" data-i18n="portfolio_subtitle">Ҳамаи тасвирҳо корҳои воқеӣ мебошанд, ки метавонед дар ҳолати калон бубинед</p>
+        </div>
+
+        <!-- Controls: Filters & Search -->
+        <div class="portfolio-controls">
+          <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">
+              <span data-i18n="filter_all">Ҳама</span>
+              <span class="filter-count">0</span>
+            </button>
+            <button class="filter-btn" data-filter="posters">
+              <i class="fas fa-film"></i>
+              <span data-i18n="filter_posters">Реклама ва Постерҳо</span>
+              <span class="filter-count">0</span>
+            </button>
+            <button class="filter-btn" data-filter="products">
+              <i class="fas fa-tag"></i>
+              <span data-i18n="filter_products">Маҳсулот ва Э-коммерс</span>
+              <span class="filter-count">0</span>
+            </button>
+            <button class="filter-btn" data-filter="branding">
+              <i class="fas fa-id-card"></i>
+              <span data-i18n="filter_branding">Брендинг ва Визитка</span>
+              <span class="filter-count">0</span>
+            </button>
+            <button class="filter-btn" data-filter="print">
+              <i class="fas fa-file-invoice"></i>
+              <span data-i18n="filter_print">Флаер ва Чоп</span>
+              <span class="filter-count">0</span>
+            </button>
+            <button class="filter-btn" data-filter="retouch">
+              <i class="fas fa-wand-magic-sparkles"></i>
+              <span data-i18n="filter_retouch">Ретуш ва Арт</span>
+              <span class="filter-count">0</span>
+            </button>
+          </div>
+
+          <div class="search-and-view-bar">
+            <div class="search-input-box">
+              <i class="fas fa-search"></i>
+              <input type="text" id="portfolio-search-input" class="portfolio-search" placeholder="Ҷустуҷӯи корҳо..." data-i18n-ph="search_placeholder" />
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-muted);">
+              <i class="fas fa-images"></i> <span>Корҳои воқеӣ / Real projects</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Grid of Real Portfolio Cards -->
+        <div class="works-grid" id="works-grid">
+          <!-- Rendered dynamically by script.js with rich cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SERVICES SECTION
+         ========================================== -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge" data-i18n="services_badge">Хизматрасониҳо</div>
+          <h2 class="section-title" data-i18n="services_title">Ман чӣ хизматрасониҳоро пешниҳод мекунам?</h2>
+          <p class="section-subtitle" data-i18n="services_subtitle">Ҳалли касбии ҳамаи талаботҳои дизайнии тиҷорати шумо</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-bullhorn"></i>
+            </div>
+            <h3 class="service-title" data-i18n="service_1_title">Постерҳои Рекламавӣ ва Баннерҳо</h3>
+            <p class="service-desc" data-i18n="service_1_desc">
+              Тарҳрезии постерҳои баландсифат барои автомобилҳо, пойафзол, хӯрокворӣ, шабакаҳои иҷтимоӣ ва рекламаи кӯчагӣ.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> <span>Постерҳои автомобил ва варзиш</span></li>
+              <li><i class="fas fa-check-circle"></i> <span>Баннерҳои Instagram ва Telegram</span></li>
+              <li><i class="fas fa-check-circle"></i> <span>Инфографикаи маркетплейсҳо</span></li>
+            </ul>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card">
+            <div class="service-icon" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);">
+              <i class="fas fa-desktop"></i>
+            </div>
+            <h3 class="service-title" data-i18n="service_2_title">Интерфейси UX/UI (Сайт ва Барнома)</h3>
+            <p class="service-desc" data-i18n="service_2_desc">
+              Тарроҳии сомонаҳои муосир, лендингҳо ва барномаҳои телефонӣ бо услуби тоза ва 3D.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> <span>Дизайни адаптивии вебсайтҳо</span></li>
+              <li><i class="fas fa-check-circle"></i> <span>Интерфейсҳои мобилӣ дар Figma</span></li>
+              <li><i class="fas fa-check-circle"></i> <span>Тарҳи прототипҳо ва аниматсия</span></li>
+            </ul>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card">
+            <div class="service-icon" style="background: linear-gradient(135deg, #ec4899, #8b5cf6);">
+              <i class="fas fa-gem"></i>
+            </div>
+            <h3 class="service-title" data-i18n="service_3_title">Брендинг ва Ҳуҷҷатҳои Корхона</h3>
+            <p class="service-desc" data-i18n="service_3_desc">
+              Тарҳи визиткаҳои премиум, бланкаҳо, менюи ресторанҳо ва бастабандии маҳсулот.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> <span>Визиткаҳои VIP ва Корпоративӣ</span></li>
+              <li><i class="fas fa-check-circle"></i> <span>Менюи тарабхона ва қаҳвахона</span></li>
+              <li><i class="fas fa-check-circle"></i> <span>Флаер, буклет ва бастабандӣ</span></li>
+            </ul>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card">
+            <div class="service-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+              <i class="fas fa-camera-retro"></i>
+            </div>
+            <h3 class="service-title" data-i18n="service_4_title">Ретуш ва Манипулятсияи Аксҳо</h3>
+            <p class="service-desc" data-i18n="service_4_desc">
+              Иваз кардани рӯй, сохтани сояҳои воқеӣ, тоза кардани пасманзар ва эффектҳои бадеӣ.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> <span>Ретуши пӯст ва портрет</span></li>
+              <li><i class="fas fa-check-circle"></i> <span>Эффектҳои бадеии коғази дарида</span></li>
+              <li><i class="fas fa-check-circle"></i> <span>Сохтани сояҳо ва каустика</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PRICING & INTERACTIVE CALCULATOR
+         ========================================== -->
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge" data-i18n="calc_badge">Нархномаи Интерактивӣ</div>
+          <h2 class="section-title" data-i18n="calc_title">Ҳисоби тахминии арзиши лоиҳа</h2>
+          <p class="section-subtitle" data-i18n="calc_subtitle">Хизматрасонии лозимаро интихоб кунед ва нархи пешакиро бидонед</p>
+        </div>
+
+        <div class="calc-wrapper">
+          <div class="calc-grid">
+            <!-- Left Form Controls -->
+            <div class="calc-form-group">
+              <!-- Service Type -->
+              <div class="calc-field">
+                <label class="calc-label" data-i18n="calc_service_label">Навъи лоиҳа:</label>
+                <div class="calc-options-grid">
+                  <div class="calc-pill active" data-calc-type="service" data-calc-val="poster" data-i18n="calc_service_poster">Постери Рекламавӣ</div>
+                  <div class="calc-pill" data-calc-type="service" data-calc-val="ui" data-i18n="calc_service_ui">UX/UI Дизайни Сайт</div>
+                  <div class="calc-pill" data-calc-type="service" data-calc-val="brand" data-i18n="calc_service_brand">Брендинг ва Визитка</div>
+                  <div class="calc-pill" data-calc-type="service" data-calc-val="flyer" data-i18n="calc_service_flyer">Флаер / Брошюра</div>
+                  <div class="calc-pill" data-calc-type="service" data-calc-val="retouch" data-i18n="calc_service_retouch">Ретуш / Манипулятсия</div>
+                </div>
+              </div>
+
+              <!-- Complexity Tier -->
+              <div class="calc-field">
+                <label class="calc-label" data-i18n="calc_tier_label">Сатҳи мураккабӣ:</label>
+                <div class="calc-options-grid">
+                  <div class="calc-pill" data-calc-type="tier" data-calc-val="basic" data-i18n="calc_tier_basic">Базавӣ (1 рӯз)</div>
+                  <div class="calc-pill active" data-calc-type="tier" data-calc-val="standard" data-i18n="calc_tier_standard">Касбӣ (2-3 рӯз)</div>
+                  <div class="calc-pill" data-calc-type="tier" data-calc-val="premium" data-i18n="calc_tier_premium">Премиум 3D (3-5 рӯз)</div>
+                </div>
+              </div>
+
+              <!-- Urgency -->
+              <div class="calc-field">
+                <label class="calc-label" data-i18n="calc_urgency_label">Муҳлат:</label>
+                <div class="calc-options-grid">
+                  <div class="calc-pill active" data-calc-type="urgency" data-calc-val="normal" data-i18n="calc_urgency_normal">Муқаррарӣ</div>
+                  <div class="calc-pill" data-calc-type="urgency" data-calc-val="urgent" data-i18n="calc_urgency_urgent">Зудрас (Шитоб)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Summary Card -->
+            <div class="calc-summary-card">
+              <div class="calc-summary-header">
+                <span class="badge" style="width: fit-content;">Real-Time Estimate</span>
+                <span class="calc-estimate-time" data-i18n="calc_total_title">Арзиши тахминӣ:</span>
+                <div class="calc-price-display">
+                  <span class="calc-amount" id="calc-total-amount">300</span>
+                  <span class="calc-currency">TJS (Сомонӣ)</span>
+                </div>
+              </div>
+
+              <div class="calc-breakdown-list">
+                <div class="calc-breakdown-item">
+                  <span data-i18n="calc_service_label">Навъи лоиҳа:</span>
+                  <span id="calc-summary-service">Постери Рекламавӣ</span>
+                </div>
+                <div class="calc-breakdown-item">
+                  <span data-i18n="calc_tier_label">Сатҳ:</span>
+                  <span id="calc-summary-tier">Касбӣ</span>
+                </div>
+                <div class="calc-breakdown-item">
+                  <span data-i18n="calc_delivery_time">Муҳлат:</span>
+                  <span id="calc-delivery-time-val" style="color: var(--accent-amber);">2-4 рӯз</span>
+                </div>
+              </div>
+
+              <button class="btn btn-whatsapp" id="calc-whatsapp-btn" style="width: 100%;">
+                <i class="fab fa-whatsapp" style="font-size: 1.25rem;"></i>
+                <span data-i18n="calc_btn_whatsapp">Фармоиш бо WhatsApp</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CONTACT SECTION
+         ========================================== -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge" data-i18n="contact_badge">Бо ман тамос гиред</div>
+          <h2 class="section-title" data-i18n="contact_title">Биёед лоиҳаи навбатии шуморо якҷоя оғоз кунем!</h2>
+          <p class="section-subtitle" data-i18n="contact_subtitle">Барои супоридани фармоиш ё машварат метавонед мустақиман занг занед ё паём фиристед</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info -->
+          <div class="contact-info-card">
+            <div>
+              <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Абубакр Олимов</h3>
+              <p style="font-size: 0.95rem; color: var(--text-secondary);">
+                Graphic Designer & UX/UI Designer
+              </p>
+            </div>
+
+            <div class="contact-details-list">
+              <!-- Phone -->
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contact-detail-info">
+                  <span class="contact-detail-label" data-i18n="contact_phone_label">Телефон / WhatsApp</span>
+                  <div style="display: flex; align-items: center;">
+                    <a href="tel:+992936010601" class="contact-detail-value">+992 936-01-06-01</a>
+                    <button class="copy-phone-btn" id="copy-phone-btn" title="Нусхабардорӣ кардани рақам">
+                      <i class="fas fa-copy"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- WhatsApp -->
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon" style="color: #25d366; background: rgba(37, 211, 102, 0.1); border-color: rgba(37, 211, 102, 0.3);">
+                  <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="contact-detail-info">
+                  <span class="contact-detail-label">WhatsApp Direct</span>
+                  <a href="https://wa.me/992936010601" target="_blank" class="contact-detail-value" style="color: #25d366;">+992 936 01 06 01</a>
+                </div>
+              </div>
+
+              <!-- Location -->
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon" style="color: #06b6d4; background: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.3);">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-detail-info">
+                  <span class="contact-detail-label" data-i18n="contact_location_label">Макон</span>
+                  <span class="contact-detail-value" data-i18n="contact_location_val">Душанбе, Тоҷикистон</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fast Action Buttons -->
+            <div class="contact-fast-actions" style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+              <a href="https://wa.me/992936010601" target="_blank" class="btn btn-whatsapp" style="flex: 1;">
+                <i class="fab fa-whatsapp"></i> <span>WhatsApp</span>
+              </a>
+              <a href="tel:+992936010601" class="btn btn-primary" style="flex: 1;">
+                <i class="fas fa-phone"></i> <span data-i18n="quick_call">Занг задан</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Direct Message Form -->
+          <div class="contact-form-card">
+            <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem;" data-i18n="contact_form_title">Паёми худро фиристед</h3>
+
+            <form class="contact-form" id="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="form-name" data-i18n="contact_name_ph">Номи шумо</label>
+                  <input type="text" id="form-name" class="form-input" placeholder="Алишер" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="form-phone" data-i18n="contact_phone_ph">Рақами телефон</label>
+                  <input type="tel" id="form-phone" class="form-input" placeholder="+992 900 00 00 00" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="form-service" data-i18n="contact_service_ph">Кадом хизматрасонӣ лозим аст?</label>
+                <input type="text" id="form-service" class="form-input" placeholder="Масалан: Постери рекламавӣ барои пойафзол ё UX/UI сомона" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="form-message" data-i18n="contact_msg_ph">Дар бораи лоиҳаи худ мухтасар нависед...</label>
+                <textarea id="form-message" class="form-textarea" placeholder="Талабот ва ғояҳои худро нависед..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <i class="fas fa-paper-plane"></i>
+                <span data-i18n="contact_btn_send">Фиристодани паём</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo">
+            <div class="logo-badge">AO</div>
+            <span class="logo-name">Abubakr Olimov</span>
+          </div>
+          <p class="footer-desc">
+            Графический ва UX/UI дизайнери касбӣ. Офарандаи постерҳои 3D, брендинг ва тарҳҳои фурӯшанда.
+          </p>
+          <div style="display: flex; gap: 0.8rem;">
+            <a href="https://wa.me/992936010601" target="_blank" class="theme-toggle-btn" title="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="tel:+992936010601" class="theme-toggle-btn" title="Phone">
+              <i class="fas fa-phone"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title" data-i18n="nav_portfolio">Портфолио</h4>
+          <ul class="footer-links">
+            <li><a href="#portfolio" data-i18n="filter_posters">Постерҳои рекламавӣ</a></li>
+            <li><a href="#portfolio" data-i18n="filter_products">Маҳсулот ва Э-коммерс</a></li>
+            <li><a href="#portfolio" data-i18n="filter_branding">Визитка ва Брендинг</a></li>
+            <li><a href="#portfolio" data-i18n="filter_print">Флаер ва Полиграфия</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title" data-i18n="nav_about">Маълумот</h4>
+          <ul class="footer-links">
+            <li><a href="#about" data-i18n="nav_about">Дар бораи ман</a></li>
+            <li><a href="#skills" data-i18n="nav_skills">Маҳоратҳо</a></li>
+            <li><a href="#pricing" data-i18n="nav_pricing">Нархнома</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Тамос</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Тамос бо Абубакр</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary);">Телефон: +992 936-01-06-01</p>
+          <p style="font-size: 0.9rem; color: var(--text-secondary);">WhatsApp: +992 936-01-06-01</p>
+          <p style="font-size: 0.9rem; color: var(--text-secondary);">Душанбе, Тоҷикистон</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Abubakr Olimov. <span data-i18n="footer_rights">Ҳамаи ҳуқуқҳо ҳифз шудаанд.</span></p>
+        <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" title="Бозгашт ба боло">
+          <i class="fas fa-chevron-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       HD LIGHTBOX / FULLSCREEN MODAL
+       ========================================== -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true">
+    <button class="lightbox-close-btn" id="lightbox-close" aria-label="Пӯшидан">
+      <i class="fas fa-times"></i>
+    </button>
+    <button class="lightbox-nav-btn lightbox-prev" id="lightbox-prev" aria-label="Қаблӣ">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="lightbox-nav-btn lightbox-next" id="lightbox-next" aria-label="Баъдӣ">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <div class="lightbox-container">
+      <div class="lightbox-img-pane">
+        <img src="" alt="Work Preview" class="lightbox-img" id="lightbox-img" />
+      </div>
+
+      <div class="lightbox-info-pane">
+        <div>
+          <span class="badge" id="lightbox-category" style="margin-bottom: 1rem;">POSTER</span>
+          <h2 style="font-size: 1.6rem; margin-bottom: 0.8rem;" id="lightbox-title">Title</h2>
+          <p style="font-size: 0.95rem; line-height: 1.6;" id="lightbox-desc">Description</p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase;">Абзорҳо / Tools</h4>
+          <div id="lightbox-tools" style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1.5rem;"></div>
+
+          <div class="lightbox-actions" style="display: flex; gap: 0.8rem;">
+            <a href="#" download id="lightbox-download" class="btn btn-primary" style="flex: 1;">
+              <i class="fas fa-download"></i> <span data-i18n="lightbox_download">Боргирӣ (HD Download)</span>
+            </a>
+            <a href="https://wa.me/992936010601" target="_blank" class="btn btn-whatsapp" style="flex: 1;">
+              <i class="fab fa-whatsapp"></i> <span data-i18n="lightbox_order">Ҳаминхел фармоиш</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Floating Mobile Quick Action Bar (Phones) -->
+  <div class="mobile-quick-bar" id="mobile-quick-bar">
+    <a href="https://wa.me/992936010601" target="_blank" class="mobile-quick-btn wa">
+      <i class="fab fa-whatsapp"></i> <span>WhatsApp</span>
+    </a>
+    <a href="tel:+992936010601" class="mobile-quick-btn call">
+      <i class="fas fa-phone-alt"></i> <span data-i18n="quick_call">Занг задан</span>
+    </a>
+    <button class="mobile-quick-btn top" id="mobile-back-to-top" aria-label="Ба боло" title="Ба боло">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </div>
+
+  <!-- Main JavaScript -->
+  <script src="./script.js"></script>
+</body>
+</html>
